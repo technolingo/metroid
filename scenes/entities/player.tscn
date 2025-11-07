@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://otyoj5px7yk7" path="res://graphics/ui/crosshair.png" id="3_1ie0h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qees"]
+radius = 7.0
 
 [sub_resource type="Animation" id="Animation_1ie0h"]
 resource_name = "run"
@@ -78,6 +79,8 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_ucweq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -86,6 +89,8 @@ shape = SubResource("CapsuleShape2D_0qees")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+limit_left = -450
+limit_right = 1470
 
 [node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 0.5
