@@ -18,3 +18,9 @@ func _physics_process(delta: float) -> void:
 func setup(pos: Vector2, dir: Vector2):
 	position = pos + dir * 16
 	direction = dir
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if "receive_damage" in body:
+		body.receive_damage()
+	queue_free()
